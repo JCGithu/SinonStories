@@ -1,13 +1,27 @@
 {
   "name": "sinon-stories",
   "version": "1.0.0",
-  "description": "",
+  "description": "A smallish package to download Instagram Stories.",
   "main": "index.js",
+  "keywords": [
+    "Instagram",
+    "Stories",
+    "IG",
+    "Downloader",
+    "reels"
+  ],
+  "author": {
+    "name": "Colloquial",
+    "email": "hello@colloquial.studio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JCGithu/SinonStories.git"
+  },
   "scripts": {
     "build": "tsc"
   },
-  "author": "",
-  "license": "ISC",
+  "license": "CC0-1.0",
   "dependencies": {
     "crypto": "^1.0.1",
     "got": "^11.8.1",
