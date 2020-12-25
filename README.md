@@ -1,14 +1,14 @@
-## Sinon Stories
+# Sinon Stories
 
 Sinon Stories is a simple Instagram Stories downloader module.
 
-You will need to provide a cookie.txt file for your login, target usernames to download, and a download directory.
+This is linked to [Sinon](https://github.com/JCGithu/sinon) a video downloading & converting app.
 
-#### To Install
+### To Install
 
 `npm i sinon-stories`
 
-#### To run
+### To run
 
 You will need to input your username, password, and a cookie file from [Instagram](https://instagram.com) while you are logged in. You can obtain this through a few browser extensions.
 
@@ -22,13 +22,13 @@ sinonStories({
 });
 ```
 
-### Additional options
+## Additional options
 
 > - `only_video: true` // Will download only video
 > - `only_photo: true` // Will download only photos
 > - `print: true` // Will only print story URLs
 
-### Examples
+## Examples
 
 Sinon Stories is async. Below is an example usage.
 
