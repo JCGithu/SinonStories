@@ -23,7 +23,7 @@
   },
   "license": "CC0-1.0",
   "dependencies": {
-    "got": "^11.8.1",
+    "node-fetch": "^2.6.1",
     "tough-cookie": "^2.5.0",
     "tough-cookie-filestore2": "^1.0.0"
   },

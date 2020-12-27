@@ -1,9 +1,8 @@
 const Instagram = require('./lib/ig');
 const fs = require('fs');
-const { promisify } = require('util');
-const stream = require('stream');
-const got = require('got');
 const FileCookieStore = require('tough-cookie-filestore2');
+
+const fetch = require('node-fetch');
 
 async function sinonStories(options) {
   if (options.targetAccount && options.targetDir && options.cookieFile) {
@@ -62,13 +61,15 @@ async function sinonStories(options) {
             }
           }
           let URLdata = await getURL();
+          const response = await fetch(URLdata.URL);
+          const buffer = await response.buffer();
 
           let fileName = `${options.targetAccount}_${i}`;
 
-          const pipeline = promisify(stream.pipeline);
-
           async function download() {
-            await pipeline(got.stream(URLdata.URL), fs.createWriteStream(dir + fileName + URLdata.filetype));
+            fs.writeFile(dir + fileName + URLdata.filetype, buffer, () => {
+              console.log('finished downloading video!');
+            });
           }
 
           function runDownload() {
