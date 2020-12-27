@@ -35,6 +35,8 @@ sinonStories({
 Sinon Stories is async. Below is an example usage.
 
 ```JS
+const sinonStories = require('sinon-stories');
+
 sinonStories({
   username: 'coolinfluencer420',
   password: '1234Password',
