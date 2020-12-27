@@ -27,6 +27,8 @@ sinonStories({
 > - `only_video: true` // Will download only video
 > - `only_photo: true` // Will download only photos
 > - `print: true` // Will only print story URLs
+> - `proxy: string` // Use proxy
+> - `language: string` // Set language
 
 ## Examples
 
@@ -45,3 +47,7 @@ sinonStories({
   console.log(storyURLS)
 });
 ```
+
+## Future improvements
+
+- Better error logging

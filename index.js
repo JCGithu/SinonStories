@@ -10,17 +10,15 @@ async function sinonStories(options) {
       const cookieStore = new FileCookieStore(options.cookieFile);
       let username = options.username;
       let password = options.password;
-      let language, proxy;
+      let language = undefined,
+        proxy = undefined;
       if (options.language) {
         language = options.language;
-        const client = new Instagram({ username, password, cookieStore }, { language });
       }
       if (options.proxy) {
         proxy = options.proxy;
-
-        /// PROXY Options
       }
-      const client = new Instagram({ username, password, cookieStore });
+      var client = new Instagram({ username, password, cookieStore }, { language, proxy });
       try {
         await client.login();
       } catch (err) {
@@ -67,9 +65,7 @@ async function sinonStories(options) {
           let fileName = `${options.targetAccount}_${i}`;
 
           async function download() {
-            fs.writeFile(dir + fileName + URLdata.filetype, buffer, () => {
-              console.log('finished downloading video!');
-            });
+            fs.writeFile(dir + fileName + URLdata.filetype, buffer, () => {});
           }
 
           function runDownload() {
