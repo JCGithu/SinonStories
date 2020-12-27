@@ -51,3 +51,4 @@ sinonStories({
 ## Future improvements
 
 - Better error logging
+- Highlights download

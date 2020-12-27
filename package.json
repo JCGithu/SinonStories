@@ -1,6 +1,6 @@
 {
   "name": "sinon-stories",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A smallish package to download Instagram Stories.",
   "main": "index.js",
   "keywords": [
