@@ -19,7 +19,7 @@
     "url": "https://github.com/JCGithu/SinonStories.git"
   },
   "scripts": {
-    "build": "tsc"
+    "test": "node ./test/test.js"
   },
   "license": "CC0-1.0",
   "dependencies": {
