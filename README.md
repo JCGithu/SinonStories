@@ -24,11 +24,12 @@ sinonStories({
 
 ## Additional options
 
-> - `only_video: true` // Will download only video
-> - `only_photo: true` // Will download only photos
-> - `print: true` // Will only print story URLs
+> - `only_video: boolean` // Will download only video
+> - `only_photo: boolean` // Will download only photos
+> - `print: boolean` // Will only print story URLs
 > - `proxy: string` // Use proxy
 > - `language: string` // Set language
+> - `verbose: boolean` // Print error in full
 
 ## Examples
 
@@ -52,5 +53,5 @@ sinonStories({
 
 ## Future improvements
 
-- Better error logging
+- Reducing dependencies
 - Highlights download
