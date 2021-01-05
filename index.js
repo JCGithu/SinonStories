@@ -1,13 +1,24 @@
 const Instagram = require('./lib/ig');
 const fs = require('fs');
 const FileCookieStore = require('tough-cookie-filestore2');
+let { Cookie, CookieMap, CookieError } = require('cookiefile');
 
 const fetch = require('node-fetch');
 
+async function produceCookie(file) {
+  if (file) {
+    var cookies = new CookieMap(file);
+    return cookies.toRequestHeader().replace('Cookie: ', '');
+  } else {
+    return false;
+  }
+}
+
 async function sinonStories(options) {
-  if (options.targetAccount && options.targetDir && options.cookieFile) {
+  if (options.targetAccount && options.targetDir) {
     return new Promise(async (resolve) => {
-      const cookieStore = new FileCookieStore(options.cookieFile);
+      const cookieFile = produceCookie(options.cookieFile);
+      const cookieStore = new FileCookieStore(`./cookie.json`);
       let username = options.username;
       let password = options.password;
       let language = undefined,
@@ -18,10 +29,13 @@ async function sinonStories(options) {
       if (options.proxy) {
         proxy = options.proxy;
       }
-      var client = new Instagram({ username, password, cookieStore }, { language, proxy });
+      var client = new Instagram({ username, password, cookieFile, cookieStore, language, proxy });
       try {
         await client.login();
       } catch (err) {
+        if (options.verbose) {
+          console.log(err);
+        }
         throw new Error('Login error, check cookie file.');
       }
       const storyItems = await client.getStoryItemsByUsername({
