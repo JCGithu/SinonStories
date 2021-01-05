@@ -4,9 +4,9 @@ require('dotenv').config();
 sinonStories({
   username: process.env.U,
   password: process.env.P,
-  targetAccount: '',
+  targetAccount: process.env.T,
   targetDir: './',
-  cookieFile: './cookie.txt',
+  cookieFile: './test/cookie.txt',
   language: 'gb',
 })
   .catch((err) => {
