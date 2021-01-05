@@ -10,7 +10,7 @@ This is linked to [Sinon](https://github.com/JCGithu/sinon) a video downloading 
 
 ### To run
 
-You will need to input your username, password, and a cookie file from [Instagram](https://instagram.com) while you are logged in. You can obtain this through a few browser extensions.
+You will need to input your username, and password. There is a much greater chance of a successful login if you include a cookie file from [Instagram](https://instagram.com) while you are logged in. You can obtain this through a few browser extensions.
 
 ```JS
 sinonStories({
