@@ -10,7 +10,7 @@ This is linked to [Sinon](https://github.com/JCGithu/sinon) a video downloading 
 
 ### To run
 
-You will need to input your username, password, and a cookie file from [Instagram](https://instagram.com) while you are logged in. You can obtain this through a few browser extensions.
+You will need to input your username, and password. There is a much greater chance of a successful login if you include a cookie file from [Instagram](https://instagram.com) while you are logged in. You can obtain this through a few browser extensions.
 
 ```JS
 sinonStories({
@@ -24,17 +24,20 @@ sinonStories({
 
 ## Additional options
 
-> - `only_video: true` // Will download only video
-> - `only_photo: true` // Will download only photos
-> - `print: true` // Will only print story URLs
+> - `only_video: boolean` // Will download only video
+> - `only_photo: boolean` // Will download only photos
+> - `print: boolean` // Will only print story URLs
 > - `proxy: string` // Use proxy
 > - `language: string` // Set language
+> - `verbose: boolean` // Print error in full
 
 ## Examples
 
 Sinon Stories is async. Below is an example usage.
 
 ```JS
+const sinonStories = require('sinon-stories');
+
 sinonStories({
   username: 'coolinfluencer420',
   password: '1234Password',
@@ -50,4 +53,5 @@ sinonStories({
 
 ## Future improvements
 
-- Better error logging
+- Reducing dependencies
+- Highlights download
